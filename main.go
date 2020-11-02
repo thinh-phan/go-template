@@ -1,9 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
+
+	"thinh-phan.com/api"
 )
 
 func main() {
-	fmt.Println("Hello, playground")
+	srv := api.NewServer()
+	http.ListenAndServe(":8080", srv)
 }
